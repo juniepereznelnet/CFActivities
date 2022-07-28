@@ -1,4 +1,8 @@
 <cfsavecontent variable="pageContent">
+<!---	<cfquery name = "getStudents"> 
+        SELECT * FROM students
+    </cfquery> --->
+	
     <div class="container">
         <div class="row mt-4">
             <div class="col-12 text-right py-4">
@@ -15,6 +19,15 @@
                     <td class="bg-dark text-white">Subjects</td>
                 </tr>
                 </thead>
+                
+               <!--- <cfoutput query="getStudents">
+                	
+               <tr>
+                    <td>#first_name#</td>
+                    <td>#last_name#</td>
+                    <td>#subject#</td>
+                </tr>--->
+                
                 <tbody>
                     <tr>
                         <td colspan="3" class="dataTables_empty">Loading data from server</td>
