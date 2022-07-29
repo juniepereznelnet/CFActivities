@@ -1,6 +1,7 @@
-component{
-    this.name = "CFActivities";
+component
+{
+	this.name = "CFActivities";
 
-    // Default Datasource Name
-    //this.datasource = "cfsqlserver";
-} 
+	// Default Datasource Name
+	//this.datasource = "cfsqlserver";
+}

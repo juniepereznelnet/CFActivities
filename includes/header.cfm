@@ -6,7 +6,7 @@
             <h3>
             	<!--- Displays application name from component --->
                 <cfscript>
-                    appname = createObject("component", "CFActivities.components.global");
+                    appname = createObject("component", "CFActivities.components.Global");
                     writeOutput(appname.getAppName());
                 </cfscript>
             </h3>

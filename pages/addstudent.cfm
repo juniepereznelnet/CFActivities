@@ -53,6 +53,5 @@
 </cfform>
 </div>
 </cfsavecontent>
-
 <!-- module for page layout -->
-<cfmodule template="../layout/app.cfm" pageContent="#pageContent#"> 
+<cfmodule template="../layout/app.cfm" pagecontent="#pageContent#">

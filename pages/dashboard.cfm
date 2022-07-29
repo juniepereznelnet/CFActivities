@@ -46,7 +46,6 @@
         </div>
     </div>
 </cfsavecontent>
-
 <!---  Contents for additional js --->
 <cfsavecontent variable="extraJs">
     <script type="text/javascript" charset="utf-8">
@@ -82,6 +81,5 @@
         });
     </script>
 </cfsavecontent>
-
 <!---  Load page layout module and defined maincontent and incudleJS variables --->
-<cfmodule template="../layout/app.cfm" pageContent="#pageContent#" extraJS="#extraJS#">
+<cfmodule template="../layout/app.cfm" pagecontent="#pageContent#" extrajs="#extraJS#">
