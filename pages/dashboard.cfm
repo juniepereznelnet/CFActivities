@@ -1,7 +1,13 @@
 <cfsavecontent variable="pageContent">
-<!---	<cfquery name = "getStudents"> 
+<!---
+    <cfquery name = "getStudents"> 
         SELECT * FROM students
-    </cfquery> --->
+    </cfquery> 
+    
+    <cfscript>
+        getStudents = queryExecute("select * from students")
+    </cfscript> 
+--->
 	
     <div class="container">
         <div class="row mt-4">
@@ -20,13 +26,15 @@
                 </tr>
                 </thead>
                 
-               <!--- <cfoutput query="getStudents">
+               <!--- 
+               <cfoutput query="getStudents">
                 	
                <tr>
                     <td>#first_name#</td>
                     <td>#last_name#</td>
                     <td>#subject#</td>
-                </tr>--->
+                </tr>
+                --->
                 
                 <tbody>
                     <tr>

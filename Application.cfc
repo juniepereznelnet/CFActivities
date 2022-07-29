@@ -1,7 +1,6 @@
 component{
-    this.name = "ssms";
+    this.name = "CFActivities";
 
     // Default Datasource Name
-    this.datasource = "cfsqlserver";
-
+    //this.datasource = "cfsqlserver";
 } 
