@@ -25,11 +25,10 @@ component global{
     //Method for getting app menus
     public function getAppMenus()
     {
-    	//filters to return only enabled menu items
-    	filteredMenus = arrayFilter(static.SITE_MENUS, function(item){
-    		return item.enabled == true;
-    	});
-    	
-    	return filteredMenus;
+        //filters to return only enabled menu items
+        filteredMenus = arrayFilter(static.SITE_MENUS, function(item){
+            return item.enabled == true;
+        });
+        return filteredMenus;
     }
 } 

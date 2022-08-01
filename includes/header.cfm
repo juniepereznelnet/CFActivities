@@ -4,7 +4,7 @@
     <div class="container text-center text-white">
         <div class="col-12 p-4">
             <h3>
-            	<!--- Displays application name from component --->
+                <!--- Displays application name from component --->
                 <cfscript>
                     appname = createObject("component", "CFActivities.components.global");
                     writeOutput(appname.getAppName());
@@ -12,28 +12,27 @@
             </h3>
         </div>
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        	
             <div class="container-fluid">
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
                 <div id="navbarCollapse" class="collapse navbar-collapse">
-                	<ul class="nav navbar-nav">
-                		<!--- Displays application menus from component --->
+                    <ul class="nav navbar-nav">
+                        <!--- Displays application menus from component --->
                         <cfscript>
-                        	appmenus = createObject("component", "CFActivities.components.global");
-                        	menuitems = appmenus.getAppMenus();
-                        	
-                        	//Loop enabled menu items
-                        	menuitems.each( function( element, index)
-                        	{
-                        		writeOutput("<li class='nav-item'><a href='' class='nav-link'>#element.menu#</a></li>");
-                        	});
+                            appmenus = createObject("component", "CFActivities.components.global");
+                            menuitems = appmenus.getAppMenus();
+                            
+                            //Loop enabled menu items
+                            menuitems.each( function( element, index)
+                            {
+                               setLinkvalue = #element.menu# == "Dashboard" ? "dashboard.cfm" : "";
+                               writeOutput("<li class='nav-item'><a href='#setLinkvalue#' class='nav-link'>#element.menu#</a></li>");
+                            });
                         </cfscript>
-                	</ul>
-                	
-                	
+                   </ul>
+
+
                     <ul class="nav navbar-nav ms-auto">
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><cfoutput>#loginUser#</cfoutput></a>

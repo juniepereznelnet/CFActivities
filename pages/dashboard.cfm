@@ -1,13 +1,8 @@
+<!--- Contents of Page --->
 <cfsavecontent variable="pageContent">
-<!---
-    <cfquery name = "getStudents"> 
-        SELECT * FROM students
-    </cfquery> 
-    
-    <cfscript>
-        getStudents = queryExecute("select * from students")
-    </cfscript> 
---->
+
+    <!---<cfquery name = "getStudents"> SELECT * FROM students</cfquery> 
+    <cfscript>getStudents = queryExecute("select * from students")</cfscript> --->
 	
     <div class="container">
         <div class="row mt-4">
@@ -26,15 +21,13 @@
                 </tr>
                 </thead>
                 
-               <!--- 
-               <cfoutput query="getStudents">
-                	
-               <tr>
-                    <td>#first_name#</td>
-                    <td>#last_name#</td>
-                    <td>#subject#</td>
-                </tr>
-                --->
+<!--- <cfoutput query="getStudents"> 
+          <tr>
+          <td>#first_name#</td>
+          <td>#last_name#</td>
+          <td>#subject#</td>
+          </tr>
+--->
                 
                 <tbody>
                     <tr>
@@ -46,6 +39,7 @@
         </div>
     </div>
 </cfsavecontent>
+
 <!---  Contents for additional js --->
 <cfsavecontent variable="extraJs">
     <script type="text/javascript" charset="utf-8">
@@ -69,7 +63,7 @@
         "fnServerData": function ( sSource, aoData, fnCallback ) {
                 aoData.push(
                     { "name": "table", "value": "students" },
-                    { "name": "components", "value": "ssms.components.students" }
+                    { "name": "components", "value": "CFActivities.components.students" }
                     );
                     $.ajax( {"dataType": 'json',
                          "type": "POST",
@@ -81,5 +75,6 @@
         });
     </script>
 </cfsavecontent>
+
 <!---  Load page layout module and defined maincontent and incudleJS variables --->
 <cfmodule template="../layout/app.cfm" pagecontent="#pageContent#" extrajs="#extraJS#">

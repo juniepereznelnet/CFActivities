@@ -1,10 +1,10 @@
 /**
  * StudentsFactory component
  * 
- * @author Paul Gatchalian  
+ * @author Junie Perez 
  */
-component StudentsFactory extends="AAbstractFactory" {
-    ADatabaseMethods function getMethod(){
+component StudentsFactory extends="AbstractFactory" {
+    DatabaseMethods function getMethod(){
         return new Students();
     }
 } 

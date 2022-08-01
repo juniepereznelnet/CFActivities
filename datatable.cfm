@@ -14,19 +14,18 @@
     <cfsetting enablecfoutputonly="true">
     <cfprocessingdirective suppresswhitespace="true">
     
-    <!--- this comes from the AJAX script in the template --->
+    <!--- This comes from the AJAX script in the template --->
     <cfset variables.fieldlist=form.sColumns>
     <cfset variables.count=0>
     
-    <!--- strip off the comma if it is the last element --->
+    <!--- Strip off the comma if it is the last element --->
     <cfif right(variables.fieldlist,'1') EQ ",">
-    	
-        <!--- last char is a comma --->
+        <!--- Last char is a comma --->
         <cfset variables.listLength = len(variables.fieldlist)>
         <cfset variables.fieldlist = left(variables.fieldlist, variables.listLength-1)>
     </cfif>
 
-    <!--- load component --->
+    <!--- Load component --->
     <cfscript>
         factory = createObject("component", "components.FactoryProducer");
         studentsFactory =  factory.getFactory(form.table);
@@ -69,10 +68,11 @@
         "iTotalRecords": #getAllRecords.recordCount#,
         "iTotalDisplayRecords": #getAllRecords.recordcount#,
         "aaData": [
-        <cfloop query="#getAllRecords#" startrow="#form.iDisplayStart+1#" endrow="#form.iDisplayStart+form.iDisplayLength#"><cfset variables.count=variables.count+1>
+        <cfloop query="#getAllRecords#" startrow="#form.iDisplayStart+1#" endrow="#form.iDisplayStart+form.iDisplayLength#">
+        <cfset variables.count=variables.count+1>
+        
     [<cfloop list="#variables.fieldlist#" index="variables.i">
-    
-    <!--- custom translations --->
+    <!--- Custom translations --->
     "#getAllRecords[variables.i][getAllRecords.currentRow]#"
     <cfif variables.i is not listLast(variables.fieldlist)>, </cfif>
     </cfloop>]

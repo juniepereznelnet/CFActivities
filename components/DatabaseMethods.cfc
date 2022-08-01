@@ -3,7 +3,7 @@
 	*
 	* @author Junie Perez
 	*/
-	abstract component ADatabaseMethods{
+	abstract component DatabaseMethods{
 	abstract function get();
 	abstract function add();
 	abstract function update();
